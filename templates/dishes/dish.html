@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block content %}
+
+<div class="tooptext text-center">
+         <h4 class="toptext">{{ dish.name }}</h4>
+    </div>
+
+        <div class="container listing">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ dish.photo.url }}" class="img-responsive">
+               </div>
+               <div class="col-md-2" id="options">
+                   <p>NAME: <span>{{ dish.name }}</span></p>
+                   <p>AMOUNT: <span><s>N</s>{{ dish.price | intcomma }}</span></p>
+                   <p>CATRGORY: <span>{{ dish.category }}</span></p>
+                   <p>CREATED DATE: <span>{{ dish.dish_date | timesince }}</span></p>
+               </div>
+               <div class="col-md-2 pull-right text-center">
+                    <img src="{{ dish.chef.photo.url }}" class="img-responsive thumbnail">
+                    <p>{{ dish.chef }}</p>
+                    <button class="btn btn-default" data-toggle="modal"
+                    data-target="#mymodal">Contact</button>
+               </div>
+            </div><br><br>
+
+            <!-- <div class="row row2">
+                        <div class="col-md-3">
+                            <img src="img/house8.jpg" class="img-responsive thumbnail">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="img/house9.jpg" class="img-responsive thumbnail">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="img/house21.jpg" class="img-responsive thumbnail">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="img/house22.jpg" class="img-responsive thumbnail">
+                        </div>
+            </div><br>
+            <div class="row options2" >
+                <h3><B>Description</B></h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi molestiae doloremque aliquam deserunt quasi dolores nam quo animi! Eligendi perspiciatis nostrum perferendis mollitia enim repellendus voluptatum, labore impedit unde ipsa?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum explicabo inventore cupiditate nam voluptatibus blanditiis at laborum hic nihil deserunt est commodi neque quam quas eos illo similique, quo ullam.
+                </p>
+            </div> -->
+
+    </div>
+
+
+
+
+    <div class="modal fade" id="mymodal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h1 class="about">Contact</h1>
+                </div>
+                <div class="modal-body">
+                   <form action="{% url 'contact' %}" method="POST">
+                       {% csrf_token %}
+                       {% if user.is_authenticated %}
+                            <input type="hidden" name="user_id"
+                                   value="{{ user.id }}">
+                       {% else %}
+                            <input type="hidden" name="user_id"
+                                   value="0">
+                       {% endif %}
+                       <input type="hidden" name="dish_id"
+                                   value="{{ dish.id }}">
+                       <input type="hidden" name="chef_email"
+                                   value="{{ dish.chef.email }}">
+                        <div class="form-group">
+                            <label>Dish Name:</label>
+                            <input type="text" class="form-control" value="{{ dish.name }}" name="dish">
+                        </div>
+                        <div class="form-group">
+                            <label>Full Name:</label>
+                            <input type="text" class="form-control" name="fullname"
+                                {% if user.is_authenticated %}
+                                   value="{{ user.first_name }} {{ user.last_name }}" {% endif %}
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" name="email"
+                                {% if user.is_authenticated %}
+                                   value="{{ user.email }}" {% endif %}
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number:</label>
+                            <input type="number" class="form-control" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Address:</label>
+                            <input type="text" class="form-control" name="address">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-default" name="submit">Submit</button>
+                        </div>
+                   </form>
+                </div>
+                <div class="modal-header">
+                    <button class="btn btn-default close" data-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <br><br>
+<footer class="container-fluid" id="footer">
+    <div class="col-md-4 text-center">
+        <div class="row">
+            <h4>SHARON HOMES</h4>
+                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, deleniti veniam laboriosam ex cumque perspiciatis optio placeat suscipit voluptatibus ipsa aut asperiores temporibus, rerum libero hic qui beatae, repudiandae doloremque!</P>
+        </div>
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="row">
+            <h4>CONTACT US</h4>
+            <p class="fa fa-facebook"><span>  eze sharon</span></p> <br>
+            <p class="fa fa-instagram"><span>  official_sharry2</span></p> <br>
+            <p class="fa fa-twitter"><span>  sharrygold</span></p><BR>
+            <p class="fa fa-phone"><span>  07031091449</span></p>
+        </div>
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="row">
+             <h3>Subscribe To Newsletters</h3><br>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="enter your email">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default">subscribe</button>
+                </div>
+        </div>
+    </div>
+</footer>
+
+
+{% endblock %}

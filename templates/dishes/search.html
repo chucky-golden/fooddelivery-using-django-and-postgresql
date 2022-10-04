@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block content %}
+
+    <div class="firstsection text-center">
+        <h3>DISH SEARCHING JUST GOT EASY</h3> <br><br>
+        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ve</P><br>
+
+        <form action="{% url 'search' %}">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <input type="text" name="keyword" class="form-control" placeholder="food name">
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" name="category" class="form-control" placeholder="category">
+                </div>
+            </div>
+            <div class="row">
+                <center>
+                    <div class="form-group">
+                        <select class="form-control" name="price">
+                            <option selected="true" disabled="disabled">Max Price (Any)</option>
+                            {% for key,value in price_choices.items %}
+                                <option value="{{ key }}">{{ value }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </center>
+            </div>
+            <div class="row">
+                <button class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container" id="text">
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quod sed fuga itaque voluptatibus, mollitia quisquam quidem debitis pariatur ipsum voluptas culpa quos dolore autem rerum atque vitae deleniti cumque?</h4>
+    </div>
+
+    <div class="container-fluid" id="firstbox">
+        {% if dishes %}
+            {% for dish in dishes %}
+                <div class="col-md-3">
+                    <div class="row">
+                        <img src="{{ dish.photo.url }}" class="img-responsive">
+                    </div>
+                    <div class="row row1">
+                        <p>NAME: <span>{{ dish.name }}</span></p>
+                        <p>CATEGORY: <span>{{ dish.category }}</span></p>
+                        <p>AMOUNT: <span><s>N</s>{{ dish.price | intcomma }}</span></p>
+                        <a href="{% url 'dish' dish.id %}" class="btn btn-default">VIEW MORE</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-md-12">
+                <p>No Dish Available</p>
+            </div>
+        {% endif %}
+
+    </div>
+<br><br>
+<footer class="container-fluid">
+    <div class="col-md-4 text-center">
+        <div class="row">
+            <h4>FOODIE DISHES</h4>
+                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, deleniti veniam laboriosam ex cumque perspiciatis optio placeat suscipit voluptatibus ipsa aut asperiores temporibus, rerum libero hic qui beatae, repudiandae doloremque!</P>
+        </div>
+    </div>
+    <div class="col-md-4 text-center" id="footer">
+        <div class="row">
+            <h4>CONTACT US</h4>
+            <p class="fa fa-facebook"><span>  eze sharon</span></p> <br>
+            <p class="fa fa-instagram"><span>  official sharry_2</span></p> <br>
+            <p class="fa fa-twitter"><span>  sharrygold</span></p><BR>
+            <p class="fa fa-phone"><span>  07031091449</span></p>
+        </div>
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="row">
+             <h3>Subscribe To Newsletters</h3><br><br>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="enter your email">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default">subscribe</button>
+                </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

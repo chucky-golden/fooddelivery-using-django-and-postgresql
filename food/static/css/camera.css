@@ -1,0 +1,46 @@
+body{
+    background-color: black;
+}
+.navbar{
+    color: blue;
+    padding: 5px;
+    background-color: white;
+}
+.navbar .navbar-header button{
+    background-color: white;
+    color: blue;
+}
+.navbar .navbar-header button .icon-bar{
+    background-color: black;
+    color: black;
+}
+.navbar .navbar-brand img{
+    margin-top: -16px;
+    width: 55%;
+}
+.navbar .collapse ul li a{    
+    color: blue;
+    font-weight: bolder;
+}
+.navbar .collapse ul li a:visited{    
+    color: blue;
+    font-weight: bolder;
+}
+.navbar .collapse ul li a:hover{
+    background-color: transparent;    
+    color: blue;
+    font-weight: bolder;
+}
+.navbar ul li{
+    font-size: 20px;
+}
+.carousel-inner img {
+    width: 100%; 
+    background-size: cover;
+    margin-top: -50%;
+  }
+  .text{
+      position: absolute; top: -450%; left: 17%;
+      color: black;
+      font-size: 40px;
+  }

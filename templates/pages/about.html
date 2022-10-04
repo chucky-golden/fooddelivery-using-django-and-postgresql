@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block title %} About {% endblock %}
+{% load static %}
+
+{% block content %}
+
+ <div>
+        <ul class="breadcrumb">
+            <li><a href="{% url 'index' %}">home</a></li>
+            <li>about us</li>
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <div class="col-md-6" id="headimg">
+             <img src="{% static 'img/house10.jpg' %}" class="img-responsive">
+        </div>
+        <div class="col-md-6" id="headtext">
+            <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error earum asperiores quas totam dicta a perspiciatis nihil, ad voluptatibus, at, libero corporis nesciunt velit sint exercitationem perferendis inventore qui porro!</P>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima fuga id rerum hic modi earum mollitia! Quas culpa illo, voluptates suscipit optio deleniti nobis nostrum, alias cum, quos inventore in.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugiat fugit perferendis ipsa aliquid velit expedita aut dolorum quis accusantium molestias commodi quia consequuntur, quas deserunt sed autem, quo blanditiis!</p>
+        </div>
+    </div>
+
+        <div class="container-fluid" id="downtext">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur tempora quia, unde ipsum voluptate esse commodi, doloremque placeat et, perferendis quidem vel laborum sit possimus vero suscipit ipsam aliquid hic.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eveniet dolor temporibus perspiciatis illo ratione perferendis doloribus, aspernatur placeat recusandae, nulla dolorum earum harum hic, impedit quia voluptatum error? Itaque.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia architecto corrupti molestias asperiores, rem sed facilis optio velit quasi sunt. Exercitationem aut sunt minima delectus odit nisi tempore eos quia?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, repellendus iusto. A ipsam atque nobis, itaque doloribus, eos, labore ex quae beatae est non cupiditate molestiae necessitatibus earum autem. Exercitationem!</p>
+            </p>
+
+        </div>
+
+    <div class="container-fluid" id="team">
+        <h4>Meet Our Team</h4>
+    </div>
+    <br><br>
+    <div class="container-fluid" id="roundimg">
+        <DIV class="col-md-4">
+                <img src="{% static 'img/Snapchat-1563984242.jpg' %}" class="img-responsive img-circle" id="photo">
+            <div class="row">
+                <h5 class="text2">EZE SHARON</h5>
+                <p class="text3">Lorem ipsum dolor sit amet consectetur <P> adipisicing elit. Sit modi obcaecati <p>enim laborum architecto sapiente rerum
+                 </p>
+            </div>
+        </DIV>
+        <DIV class="col-md-4">
+                <img src="{% static 'img/uju.jpg' %}" class="img-responsive img-circle"  id="photo">
+            <div class="row">
+                <h5 class="text4">NGOKA CONFIDENCE</h5>
+                 <p class="text3">Lorem ipsum dolor sit amet consectetur <p> adipisicing elit. Sit modi obcaecati <p>enim laborum architecto  sapiente rerum </p>
+            </div>
+        </DIV>
+        <div class="col-md-4">
+                <img src="{% static 'img/sha.jpg' %}" class="img-responsive img-circle"  id="photo">
+            <div class="row">
+                <h5 class="text2">ANGEL DURU</h5>
+                <p class="text3">Lorem ipsum dolor sit amet consectetur <p> adipisicing elit. Sit modi obcaecati <p>enim laborum architecto sapiente rerum </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="mymodal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h1 class="about">Contact</h1>
+                </div>
+                <div class="modal-body">
+                   <form>
+                        <div class="form-group">
+                            <label>Listing Name:</label>
+                            <input type="text" class="form-control" name="listing">
+                        </div>
+                        <div class="form-group">
+                            <label>Full Name:</label>
+                            <input type="text" class="form-control" name="fullname">
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number:</label>
+                            <input type="number" class="form-control" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Description:</label>
+                            <textarea class="form-control" name="description" rows="3" ></textarea>
+                        </div>
+                        <div class="form-group">
+                                <button class="btn btn-default" name="submit">Submit</button>
+                        </div>
+                   </form>
+                </div>
+                <div class="modal-header">
+                    <button class="btn btn-default close" data-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <br><br><br><br>
+<footer class="container-fluid">
+    <div class="col-md-4 text-center">
+        <div class="row">
+            <h4>SHARON PROPERTIES</h4>
+                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, deleniti veniam laboriosam ex cumque perspiciatis optio placeat suscipit voluptatibus ipsa aut asperiores temporibus, rerum libero hic qui beatae, repudiandae doloremque!</P>
+        </div>
+    </div>
+    <div class="col-md-4 text-center" id="footer">
+        <div class="row">
+            <h4>CONTACT US</h4>
+            <p class="fa fa-facebook"><span>  eze sharon</span></p> <br>
+            <p class="fa fa-instagram"><span>  official sharry_2</span></p> <br>
+            <p class="fa fa-twitter"><span>  sharrygold</span></p><BR>
+            <p class="fa fa-phone"><span>  07031091449</span></p>
+        </div>
+    </div>
+    <div class="col-md-4 text-center">
+        <div class="row">
+             <h3>Subscribe To Newsletters</h3><br><br>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="enter your email">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default">subscribe</button>
+                </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

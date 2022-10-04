@@ -1,0 +1,12 @@
+#branding h1{
+    color: white;
+}
+#header{
+    background: purple;
+}
+div.breadcrumb{
+    background: purple;
+}
+.module h2, .module captio, .inline-group h2{
+    background: purple;
+}

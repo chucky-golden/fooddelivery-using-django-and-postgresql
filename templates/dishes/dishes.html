@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block content %}
+
+<div class="tooptext text-center">
+         <h4 class="toptext">TOP DISHES</h4>
+    </div>
+
+    <div>
+        <ul class="breadcrumb" id="crumb">
+            <li><a href="{% url 'index' %}">home</a></li>
+            <li>featured listing</li>
+        </ul>
+    </div>
+
+    <div class="container-fluid" id="firstbox">
+
+        {% if dishes %}
+            {% for dish in dishes %}
+                <div class="col-md-3">
+                    <div class="row">
+                        <img src="{{ dish.photo.url }}" class="img-responsive">
+                    </div>
+                    <div class="row row1">
+                        <p>NAME: <span>{{ dish.name }}</span></p>
+                        <p>CATEGORY: <span>{{ dish.category }}</span></p>
+                        <p>AMOUNT: <span><s>N</s>{{ dish.price | intcomma }}</span></p>
+                        <a href="{% url 'dish' dish.id %}" class="btn btn-default">VIEW MORE</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-md-12">
+                <p>No Dish Available</p>
+            </div>
+        {% endif %}
+
+        </div>
+
+        <div class="container">
+            {% if dishes.has_other_pages %}
+                <ul class="pagination pagination-lg">
+                    {% if dishes.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link"
+                               href="?page={{ dishes.previous_page_number }}">
+                                previous</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link">previous</a>
+                        </li>
+                    {% endif %}
+
+                    {% for i in dishes.paginator.page_range %}
+
+                        {% if dishes.number == i %}
+                            <li class="page-item active">
+                                <a class="page-link">{{i}}</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item">
+                                <a class="page-link"
+                                 href="?page={{i}}">{{i}}</a>
+                            </li>
+                        {% endif %}
+
+                    {% endfor %}
+
+                    {% if dishes.has_next %}
+                        <li class="page-item">
+                            <a class="page-link"
+                               href="?page={{ dishes.next_page_number }}">
+                                next</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled">
+                            <a class="page-link">next</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="mymodal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h1 class="about">Contact</h1>
+                </div>
+                <div class="modal-body">
+                   <form>
+                        <div class="form-group">
+                            <label>Listing Name:</label>
+                            <input type="text" class="form-control" name="listing">
+                        </div>
+                        <div class="form-group">
+                            <label>Full Name:</label>
+                            <input type="text" class="form-control" name="fullname">
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number:</label>
+                            <input type="number" class="form-control" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Description:</label>
+                            <textarea class="form-control" name="description" rows="3" ></textarea>
+                        </div>
+                        <div class="form-group">
+                                <button class="btn btn-default" name="submit">Submit</button>
+                        </div>
+                   </form>
+                </div>
+                <div class="modal-header">
+                    <button class="btn btn-default close" data-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="container-fluid">
+        <div class="col-md-4 text-center">
+            <div class="row">
+                <h4>SHARON PROPERTIES</h4>
+                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, deleniti veniam laboriosam ex cumque perspiciatis optio placeat suscipit voluptatibus ipsa aut asperiores temporibus, rerum libero hic qui beatae, repudiandae doloremque!</P>
+            </div>
+        </div>
+        <div class="col-md-4 text-center" id="footer">
+            <div class="row">
+                <h4>CONTACT US</h4>
+                <p class="fa fa-facebook"><span>  eze sharon</span></p> <br>
+                <p class="fa fa-instagram"><span>  official sharry_2</span></p> <br>
+                <p class="fa fa-twitter"><span>  sharrygold</span></p><BR>
+                <p class="fa fa-phone"><span>  07031091449</span></p>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="row">
+                 <h3>Subscribe To Newsletters</h3><br>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="enter your email">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default">subscribe</button>
+                    </div>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}

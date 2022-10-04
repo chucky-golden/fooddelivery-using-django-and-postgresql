@@ -1,0 +1,353 @@
+.navbar{
+    color: white;
+    padding: 5px;
+    background-color: #990073;
+}
+.navbar #logoimg{
+    width: 22%;
+    margin-top: -0.5%;
+}
+.navbar .navbar-header button .icon-bar{
+    background-color: darkblue;
+    color: white;
+}
+.navbar .navbar-brand img{
+    margin-top: -16px;
+    width: 55%;
+}
+.navbar .collapse ul li a{    
+    color: white;
+    font-weight: bold;
+}
+.navbar .collapse ul li .active{
+    color: rgb(3, 6, 53);
+    background-color: rgba(170, 108, 22, 0.4);
+}
+.navbar .collapse ul li a:visited{    
+    color: white;
+    font-weight: bolder;
+}
+.navbar .collapse ul li a:hover{
+    background-color: transparent;    
+    color: darkblue;
+    font-weight: bolder;
+}
+ .firstsection{
+    background-image: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%),
+     url(../img/house16.jpg);
+    background-size: cover;
+    margin-top: 2%;
+    padding: 5%;
+    font-family: algerian;
+}
+.firstsection h3{
+    color: #990073;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-top: 30px;
+}
+.firstsection p{
+    color: #990073;
+}
+.firstsection button{
+    background-color: #990073;
+    color: white;
+    font-size: 20PX;
+    border-radius: 20PX;
+    border: 1px solid #990073;
+    width: 30%;
+}
+#text{
+    margin-top: 2%;
+}
+#firstbox .col-md-3{
+    margin: 50px;
+    box-shadow: 5px 20px 20px 5px grey;
+    border-radius: 20px;
+}
+#firstbox img{
+    height: 200px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+#firstbox .col-md-3 span{
+    margin-left: 50%;
+}
+#firstbox .col-md-3 a{
+    width: 100%;
+    background-color: #990073;
+    color: white;
+}
+#firstbox .col-md-3 .row1{
+    padding: 20px;
+}
+footer{
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    color: #990073;
+}
+footer .col-md-4{
+    padding: 20px;
+}
+footer .col-md-4 .fa{
+    font-size: 18px;
+}
+footer .col-md-4 .form-group {
+    color: black;
+    border-radius: 30px;
+}
+footer .col-md-4 .form-group button{
+    background-color: #990073;
+    color: white;
+    border-radius: 30px;
+    margin-left: 45%;
+    width: 50%;
+    padding: 12px;
+}
+
+/* single listing */
+.listing{
+    margin-top: 2%;
+}
+.listing .col-md-6 img{
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+}
+.listing .col-md-3 img{
+    width: 60%;
+    border-radius: 20px;
+}
+.tooptext{
+    background-color: #990073;
+    color: white;
+    margin-top: 3%;
+    padding: 25px;
+}
+.tooptext p{
+    font-size: 20px;
+}
+.toptext{
+    font-size: 50px;
+    text-align: center;
+    font-family: algerian;
+    font-weight: bold;
+}
+.listing #options{
+    font-weight: bold;
+}
+.listing .col-md-2 img{
+    width: 100%;
+    height: 155px;
+    border-radius: 20px;
+}
+.listing .col-md-2 button{
+    width: 100%;
+    background-color: #990073;
+    color: white;
+}
+.listing .options2 h3{
+    color: #990073;
+}
+#mymodal{
+    margin-top: 2%;
+}
+#mymodal form input{
+    border-color: #990073;
+    border-radius: 20px;
+}
+#mymodal form textarea{
+    border-color: #990073;
+}
+
+#mymodal form button{
+    background-color: #990073;
+    color: white;
+    border-color: #990073;
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+/* aboutus */
+
+.breadcrumb{
+    margin-top: 5%;
+}
+#crumb{
+    margin-top: -1%;
+}
+#headimg{
+    width: 35%;
+}
+#headtext{
+    font-size: 15px;
+    margin-top: 2%;
+}
+#downtext p{
+    margin-top: 2%;
+}
+#team{
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    height: 70px;
+    padding: 5px;
+}
+.text2{
+    margin-left: 97px;
+}
+.text4{
+    margin-left: 80px;
+}
+#team h4{
+    font-size: 30px;
+    color: #990073;
+    font-family: algerian;
+    text-align: center;
+}
+#roundimg img{
+    padding: 30px;
+    width: 75%;
+}
+#roundimg .col-md-4 p{
+    margin-left: 47px;
+}
+#photo{
+    height: 300px;
+    width: 100%;
+}
+
+/* login */
+
+#feedback3{
+    margin-top: 2%;
+    padding: 5%;
+    box-shadow: 5px 5px 50px lightgray;
+}
+#login, #login2{
+    margin-top: 5%;
+}
+#feedback2, #feedback3{
+    margin-top: 2%;
+    padding: 5%;
+    box-shadow: 5px 5px 50px lightgray;
+}
+#feedback2 .form-group input, #feedback3 .form-group input{
+    border-color: #990073;
+    border-radius: 20px;
+}
+#regbutton{
+    background-color: #990073;
+    color: white;
+    width: 30%;
+    border-color: #990073;
+    border-radius: 50px;
+    margin-left: 350px;
+}
+#regbutton button{
+    background-color: #990073;
+    border: 1px solid #990073;
+    border-radius: 20PX;
+    
+
+}
+#regbutton a{
+    color: white;
+}
+#feedback2 form button, #feedback3 footer button{
+    background-color: #990073;
+    color: white;
+    border-color: #990073;
+    width: 30%;
+    margin-left: 400px;
+    border-radius: 20px;
+}
+
+.console{
+    text-align: center;
+    color: #990073;
+    margin: 9% 5%;
+}
+.welcome{
+    margin-top: -8%;
+}
+.welcome1 b{
+    color: #990073;
+}#demo, #demo1{
+    color: #990073;
+}
+.number p{
+    color: #990073;
+}
+
+
+/* admincreate */
+.story{
+    margin-top: 10%;
+}
+.story label{
+    color: #990073;
+    font-size: 20px;
+}
+.category label{
+    color: #990073;
+    margin: 5%;
+}
+.story textarea{
+    border: 1px solid #990073;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgba(5, 120, 124, 0.8);
+}
+.category input, .category select{
+    border: 1px solid #990073;
+    box-shadow: 1px 1px #990073;
+    border-radius: 10px;
+}
+.butn button{
+    width: 20%;
+    margin-top: 2%;
+    border: 1px solid #990073;
+    border-radius: 20px;
+    color: white;
+    background-color: #990073;
+    margin-left: 10px;
+}
+#mainpic{
+    margin-top: 3%;
+}
+
+ @media screen and (max-width: 800px){
+    .tooptext{
+        background-color: #990073;
+        color: white;
+        margin-top: 3%;
+        padding: 25px;
+    }
+    #regbutton{
+        width: 100%;
+        border-radius: 50px;
+        margin-left: 1%;
+    }
+    #feedback2 form button{
+        width: 100%;
+        border-radius: 50px;
+        margin-left: unset;
+    }
+    /* amdincreate */
+    .story{
+        margin-top: 25%;
+    }
+    
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
